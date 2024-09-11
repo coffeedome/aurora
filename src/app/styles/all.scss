@@ -1,0 +1,29 @@
+@import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+
+.custom-appbar {
+    background-color: #004080; // Dark blue color
+    color: white; // White text color
+  
+    .appbar-title {
+      color: white;
+      margin: 0;
+    }
+  
+    .k-button {
+      color: #004080;
+      background-color: white;
+      border-color: white;
+    }
+  }
+
+.custom-dark-blue-btn {
+background-color: #004080; // Dark blue background
+color: white; // White text
+border: none; // Optional: remove the border
+}
+
+.custom-dark-blue-btn:hover {
+    background-color: #002244; // Darker shade on hover
+  }
+
