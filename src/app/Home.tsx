@@ -6,14 +6,13 @@ import {
   Drawer,
   DrawerContent,
 } from "@progress/kendo-react-layout";
-import UploadResumes from "./components/UploadResumes";
+import UploadResumes from "./components/UploadResumes/UploadResumes";
 import SearchForm from "./components/BasicSearch/SearchForm";
 import NlpSearch from "./components/NlpSearch";
 import { SvgIcon } from "@progress/kendo-react-common";
 import { menuIcon } from "@progress/kendo-svg-icons";
 import { Button } from "@progress/kendo-react-buttons";
 import { useState } from "react";
-import { StorageBrowser } from "./components/S3FileBrowser";
 
 export default function Home() {
   const [drawerExpanded, setDrawerExpanded] = useState(false);

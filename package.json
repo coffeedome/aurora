@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react-storage": "storage-browser",
-    "aws-amplify": "storage-browser",
+    "@aws-sdk/s3-presigned-post": "^3.654.0",
     "@progress/kendo-react-buttons": "^8.2.0",
     "@progress/kendo-react-form": "^8.2.0",
     "@progress/kendo-react-inputs": "^8.2.0",
@@ -18,6 +18,7 @@
     "@progress/kendo-react-upload": "^8.2.0",
     "@progress/kendo-svg-icons": "^3.0.0",
     "@progress/kendo-theme-bootstrap": "^9.0.0",
+    "aws-amplify": "storage-browser",
     "keycloak-js": "^25.0.4",
     "next": "14.2.8",
     "react": "^18",
