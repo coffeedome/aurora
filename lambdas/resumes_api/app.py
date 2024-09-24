@@ -12,10 +12,10 @@ app = APIGatewayRestResolver()
 s3_client = boto3.client("s3")
 
 # Define your S3 bucket name
-bucket_name = os.getenv("RESUME_S3_BUCKET_NAME")
+bucket_name = os.getenv("RESUMES_S3_BUCKET_NAME")
 
 
-@app.post("/resume/supload")
+@app.post("/resumes/upload")
 def upload_file():
     # Extract file data and filename from the request body
     body = app.current_event.json_body
@@ -51,7 +51,7 @@ def get_resumes():
         return {"message": "No name provided in query string"}
 
 
-@app.get("/resume")
+@app.get("/resumes")
 def hello():
     logger.info("Request for all resumes received")
     return {"message": "get list of resumes here!"}
@@ -62,5 +62,5 @@ def hello():
 )
 def lambda_handler(event, context):
     if bucket_name is None:
-        raise ValueError("Env var RESUME_S3_BUCKET_NAME cannot be empty")
+        raise ValueError("Env var RESUMES_S3_BUCKET_NAME cannot be empty")
     return app.resolve(event, context)

@@ -98,7 +98,7 @@ resource "aws_api_gateway_integration" "integration" {
   rest_api_id             = aws_api_gateway_rest_api.app.id
   resource_id             = aws_api_gateway_resource.resumes.id
   http_method             = aws_api_gateway_method.resumes_any_method.http_method
-  integration_http_method = "ANY"
+  integration_http_method = "POST"
   type                    = "AWS_PROXY"
   uri                     = aws_lambda_function.resumes.invoke_arn
   # credentials             = aws_iam_role.apigw_execution_role.arn //TODO: review cause for 500
@@ -142,4 +142,8 @@ resource "aws_api_gateway_account" "account" {
 
 output "api_endpoint" {
   value = "${aws_api_gateway_rest_api.app.execution_arn}/resumes"
+}
+
+output "invoke_arn_lambda" {
+  value = aws_lambda_function.resumes.invoke_arn
 }
